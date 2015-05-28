@@ -11,7 +11,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct Coche {
+
+	char matricula[7];
+	char marca[30];
+	char modelo[30];
+	int cv;
+
+};
+
+int size(struct Coche taller[]) {
+
+	return sizeof(taller) / sizeof(taller[0]);
+}
+/**
+ *
+ */
+int buscar(struct Coche taller[], char matricula[]) {
+	int i = 0;
+	do {
+		if (strcasecmp(matricula, taller[i].matricula) == 0) {
+			return i;
+		}
+	} while (++i < size(taller));
+	return -1;
+}
+
+void ordenar(struct Coche taller[]) {
+    int i, j;
+    for (i = 0; i < 3; ++i) {
+        for (j = i + 1; j < 3; ++j) {
+            if (taller[i].cv < taller[j].cv) {
+                struct Coche aux = taller[i];
+                taller[i] = taller[j];
+                taller[j] = aux;
+            }
+        }
+    }
+
+}
+
+
 int main(void) {
-	puts("!!!Hola Mundo!!!"); /* prints !!!Hello World!!! */
+
 	return EXIT_SUCCESS;
 }
