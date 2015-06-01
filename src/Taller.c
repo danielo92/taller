@@ -24,9 +24,8 @@ int size(struct Coche taller[]) {
 
 	return sizeof(taller) / sizeof(taller[0]);
 }
-/**
- *
- */
+
+
 int buscar(struct Coche taller[], char matricula[]) {
 	int i = 0;
 	do {
@@ -39,9 +38,9 @@ int buscar(struct Coche taller[], char matricula[]) {
 
 void ordenar(struct Coche taller[]) {
     int i, j;
-    for (i = 0; i < 3; ++i) {
-        for (j = i + 1; j < 3; ++j) {
-            if (taller[i].cv < taller[j].cv) {
+    for (i = 0; i < size(taller); ++i) {
+        for (j = i + 1; j < size(taller); ++j) {
+            if (strcasecmp(taller[i].matricula, taller[j].matricula)==1) {
                 struct Coche aux = taller[i];
                 taller[i] = taller[j];
                 taller[j] = aux;
@@ -50,6 +49,7 @@ void ordenar(struct Coche taller[]) {
     }
 
 }
+
 
 
 int main(void) {
