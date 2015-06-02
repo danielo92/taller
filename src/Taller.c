@@ -123,8 +123,11 @@ int main(int argc, char** argv) {
 
     do {
 
-        printf("1. Introducir Coche\ n2. Eliminar Coche\n3. Imprimir Coche\n4. Ordenar Taller\n"
-            "5. Salir\n");
+        printf("1. Introducir Coche"
+        		"\n 2. Eliminar Coche"
+        		"\n 3. Imprimir Coche"
+        		"\n 4. Ordenar Taller\n"
+        		"5. Salir\n");
 
         printf("\nSelecciona opcion\n");
         scanf("%d", &opcion);
